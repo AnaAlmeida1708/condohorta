@@ -1,6 +1,7 @@
 package br.com.fiap.condohorta.domain;
 
 import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,7 +26,8 @@ public class Condominio implements Serializable{
 	private String email;
 	private String telefone;
 	private Boolean status;
-	@OneToOne(mappedBy = "ch_condominio", cascade=CascadeType.ALL)
+	
+	@OneToOne(cascade=CascadeType.ALL, 	mappedBy= "condominio")
 	private Endereco endereco;
 	
 	public Condominio() {
@@ -88,6 +90,15 @@ public class Condominio implements Serializable{
 	public void setStatus(Boolean status) {
 		this.status = status;
 	}
+	
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+	
 
 	@Override
 	public int hashCode() {
@@ -122,14 +133,5 @@ public class Condominio implements Serializable{
 				+ (telefone != null ? "telefone=" + telefone + ", " : "") + (status != null ? "status=" + status : "")
 				+ "]";
 	}
-
-	public Endereco getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
-	
 	
 }

@@ -75,7 +75,6 @@ public class CondominioService {
 		br.com.fiap.condohorta.domain.Endereco end = new br.com.fiap.condohorta.domain.Endereco(null, objDto.getTitulo(), objDto.getLogradouro(), 
 				objDto.getNumero(), objDto.getCep(), objDto.getComplemento(), objDto.getBairro(), objDto.getUf(), objDto.getCidade(), objDto.getLatitude(), 
 				objDto.getLongitude(), TipoEndereco.CONDOMINIO, condo);
-		end.getCondominio().setId(condo.getId());
 	return condo;
 	}
 

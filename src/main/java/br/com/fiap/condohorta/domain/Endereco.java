@@ -1,6 +1,7 @@
 package br.com.fiap.condohorta.domain;
 
 import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import br.com.fiap.condohorta.domain.enums.TipoEndereco;
 
@@ -34,13 +37,10 @@ public class Endereco implements Serializable{
 	private String longitude;
 	private Integer tipo;
 	
-//	@ManyToOne
-//	@JoinColumn(name="id_tipo_endereco")
-//	private TipoEndereco tipoEndereco;
-	
+	@JsonIgnore
 	@OneToOne
-	@JoinColumn(name="id_condominio")
-	private transient Condominio condominio;
+	@JoinColumn(name="condominio_id")
+	private Condominio condominio;
 	
 	//id usuario - comentei o campo pois será ajustado em relação futura
 	
@@ -174,4 +174,17 @@ public class Endereco implements Serializable{
 		this.tipo = tipo.getCod();
 	}
 
+	@Override
+	public String toString() {
+		return "Endereco [" + (id != null ? "id=" + id + ", " : "") + (titulo != null ? "titulo=" + titulo + ", " : "")
+				+ (logradouro != null ? "logradouro=" + logradouro + ", " : "")
+				+ (numero != null ? "numero=" + numero + ", " : "") + (cep != null ? "cep=" + cep + ", " : "")
+				+ (complemento != null ? "complemento=" + complemento + ", " : "")
+				+ (bairro != null ? "bairro=" + bairro + ", " : "") + (uf != null ? "uf=" + uf + ", " : "")
+				+ (cidade != null ? "cidade=" + cidade + ", " : "")
+				+ (latitude != null ? "latitude=" + latitude + ", " : "")
+				+ (longitude != null ? "longitude=" + longitude + ", " : "")
+				+ (tipo != null ? "tipo=" + tipo + ", " : "") + (condominio != null ? "condominio=" + condominio : "")
+				+ "]";
+	}
 }
