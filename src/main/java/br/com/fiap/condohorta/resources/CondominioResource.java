@@ -18,7 +18,7 @@ import br.com.fiap.condohorta.domain.dto.NovoCondominioDTO;
 import br.com.fiap.condohorta.services.CondominioService;
 
 @RestController
-@RequestMapping(value="/condominio")
+@RequestMapping(value="/condominios")
 public class CondominioResource {
 
 	@Autowired
