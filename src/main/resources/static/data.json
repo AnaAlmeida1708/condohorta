@@ -1,0 +1,36 @@
+[
+  {  
+    "id": 1,
+    "nome" : "Bananeira",
+    "responsavel" : "Bananinha",
+    "email" : "banana@gmail.com",  
+    "telefone" : "1137845896",  
+    "titulo" : "principal",  
+    "logradouro" : "Rua da horta",  
+    "numero" : "345",  
+    "complemento" : "Bloco 2",  
+    "cep" : "05587253",
+    "bairro" : "Bananais",
+    "cidade" : "São Paulo", 
+    "uf" : "SP",
+    "latitude" : "-3.84036",
+    "longitude" : "-32.4113 3°"
+  },
+  { 
+    "id": 2,
+    "nome" : "Condomínio Central View",
+    "responsavel" : "Bananinha",
+    "email" : "banana@gmail.com",  
+    "telefone" : "1137845896",  
+    "titulo" : "principal",  
+    "logradouro" : "Rua da horta",  
+    "numero" : "345",  
+    "complemento" : "Bloco 2",  
+    "cep" : "05587253",
+    "bairro" : "Bananais",
+    "cidade" : "São Paulo", 
+    "uf" : "SP",
+    "latitude" : "-3.84036",
+    "longitude" : "-32.4113 3°"
+  }
+]

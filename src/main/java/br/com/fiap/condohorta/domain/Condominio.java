@@ -33,6 +33,17 @@ public class Condominio implements Serializable{
 	public Condominio() {
 	}
 
+	public Condominio(Integer id, String nome, String responsavel, String email, String telefone, Boolean status, Endereco end) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.responsavel = responsavel;
+		this.email = email;
+		this.telefone = telefone;
+		this.status = true;
+		this.endereco = end;
+	}
+	
 	public Condominio(Integer id, String nome, String responsavel, String email, String telefone, Boolean status) {
 		super();
 		this.id = id;

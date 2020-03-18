@@ -12,10 +12,10 @@ public class NovoCondominioDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@NotEmpty(message="Preenchimento obrigatório")
-	@Length(min=5, max=120, message="O tamanho deve ser entre 5 e 120 caracteres")
+	@Length(min=3, max=120, message="O tamanho deve ser entre 3 e 120 caracteres")
 	private String nome;
 	@NotEmpty(message="Preenchimento obrigatório")
-	@Length(min=5, max=120, message="O tamanho deve ser entre 5 e 120 caracteres")
+	@Length(min=3, max=120, message="O tamanho deve ser entre 3 e 120 caracteres")
 	private String responsavel;
 	@NotEmpty(message="Preenchimento obrigatório")
 	@Email(message="Email inválido")
@@ -36,9 +36,7 @@ public class NovoCondominioDTO implements Serializable{
 	private String uf;
 	@NotEmpty(message="Preenchimento obrigatório")
 	private String cidade;
-	@NotEmpty(message="Preenchimento obrigatório")
 	private String latitude;
-	@NotEmpty(message="Preenchimento obrigatório")
 	private String longitude;
 	
 	private Integer idTipoEndereco;

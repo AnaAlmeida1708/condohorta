@@ -20,7 +20,7 @@ import br.com.fiap.condohorta.domain.enums.TipoEndereco;
 public class Endereco implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	@Column(name = "id_endereco")
@@ -36,14 +36,16 @@ public class Endereco implements Serializable{
 	private String latitude;
 	private String longitude;
 	private Integer tipo;
-	
+	@JsonIgnore
+	private Integer idCondominio;
+
 	@JsonIgnore
 	@OneToOne
 	@JoinColumn(name="condominio_id")
 	private Condominio condominio;
-	
+
 	//id usuario - comentei o campo pois será ajustado em relação futura
-	
+
 	public Endereco() {
 	}
 
@@ -64,6 +66,20 @@ public class Endereco implements Serializable{
 		this.longitude = longitude;
 		this.tipo = ((tipo==null) ? null : tipo.getCod());
 		this.condominio = condominio;
+	}
+
+	public Endereco(Integer id, String titulo, String logradouro, String numero, String cep, String complemento, String bairro,
+			String uf, String cidade) {
+		super();
+		this.id = id;
+		this.titulo = titulo;
+		this.logradouro = logradouro;
+		this.numero = numero;
+		this.cep = cep;
+		this.complemento = complemento;
+		this.bairro = bairro;
+		this.uf = uf;
+		this.cidade = cidade;
 	}
 
 	public Integer getId() {
@@ -113,7 +129,7 @@ public class Endereco implements Serializable{
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
-	
+
 	public String getBairro() {
 		return bairro;
 	}

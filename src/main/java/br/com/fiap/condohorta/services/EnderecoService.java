@@ -2,10 +2,13 @@ package br.com.fiap.condohorta.services;
 
 import java.util.List;
 import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+
 import br.com.fiap.condohorta.domain.Endereco;
+import br.com.fiap.condohorta.domain.dto.EnderecoDTO;
 import br.com.fiap.condohorta.repositories.EnderecoRepository;
 import br.com.fiap.condohorta.services.exceptions.DataIntegrityException;
 import br.com.fiap.condohorta.services.exceptions.ObjectNotFoundException;
@@ -31,7 +34,7 @@ public class EnderecoService {
 	
 	public Endereco update(Endereco obj) {
 		Endereco newObj = find(obj.getId());
-		updateData(newObj, obj);
+		updateDataEndereco(newObj, obj);
 		return repo.save(newObj);
 	}
 	
@@ -50,7 +53,7 @@ public class EnderecoService {
 		return repo.findAll();
 	}
 	
-	private void updateData(Endereco newObj, Endereco obj) {
+	private void updateDataEndereco(Endereco newObj, Endereco obj) {
 		newObj.setLogradouro(obj.getLogradouro());
 		newObj.setNumero(obj.getNumero());
 		newObj.setBairro(obj.getBairro());
@@ -58,8 +61,12 @@ public class EnderecoService {
 		newObj.setCidade(obj.getCidade());
 		newObj.setComplemento(obj.getComplemento());
 		newObj.setUf(obj.getUf());
-		newObj.setLatitude(obj.getLatitude());
-		newObj.setLongitude(obj.getLongitude());
 		newObj.setTitulo(obj.getTitulo());
+	}
+	
+	public Endereco fromDTOEndereco(EnderecoDTO objDto) {
+		return new br.com.fiap.condohorta.domain.Endereco(objDto.getId(), objDto.getTitulo(), objDto.getLogradouro(), 
+				objDto.getNumero(), objDto.getCep(), objDto.getComplemento(), objDto.getBairro(), 
+				objDto.getUf(), objDto.getCidade());
 	}
 }

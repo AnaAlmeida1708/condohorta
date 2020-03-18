@@ -1,0 +1,84 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Condohorta",
+		"_postman_id": "06405ad8-0dd3-2825-d0ca-124ba95e16af",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Inserir",
+			"request": {
+				"url": "http://localhost:8080/api/condominios",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n\"nome\" : \"Macieira\",\n\"responsavel\" : \"Maçãzinha\",\n\"email\" : \"maca@gmail.com\",  \n\"telefone\" : \"1137845896\",  \n\"titulo\" : \"principal\",  \n\"logradouro\" : \"Rua da horta\",  \n\"numero\" : \"345\",  \n\"complemento\" : \"Bloco 2\",  \n\"cep\" : \"05587253\",\n\"bairro\" : \"Maciais\",\n\"cidade\" : \"São Paulo\", \n\"uf\" : \"SP\",\n\"latitude\" : \"-3.84036\",\n\"longitude\" : \"-32.4113 3°\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Listar",
+			"request": {
+				"url": "http://localhost:8080/api/condominios",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar por id",
+			"request": {
+				"url": "http://localhost:8080/api/condominios/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Busca por id",
+			"request": {
+				"url": "http://localhost:8080/api/condominios/5",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar",
+			"request": {
+				"url": "http://localhost:8080/api/condominios/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"bananha\",\n    \"responsavel\": \"Morango\",\n    \"email\": \"banana@gmail.com\",\n    \"telefone\": \"1137847803\",\n    \"endereco\": {\n        \"id\": 6,\n        \"titulo\": \"principal\",\n        \"logradouro\": \"rua bananeiras\",\n        \"numero\": \"105\",\n        \"cep\": \"05587000\",\n        \"complemento\": null,\n        \"bairro\": \"bananais\",\n        \"uf\": \"sp\",\n        \"cidade\": \"sao paulo\"\n    }\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

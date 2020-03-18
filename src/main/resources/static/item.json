@@ -1,0 +1,22 @@
+{
+  "id": 1,
+  "nome": "Central View",
+  "responsavel": "Hugo Fabricio",
+  "email": "me@hugofabricio.com",
+  "telefone": "83988050131",
+  "status": true,
+  "endereco": {
+    "id": 2,
+    "titulo": "Titulo",
+    "logradouro": "Rua GOvernador",
+    "numero": "213",
+    "cep": "32412424",
+    "complemento": "ADASSDA1231",
+    "bairro": "Bondim",
+    "uf": "Pb",
+    "cidade": "Campinas",
+    "latitude": "1231412",
+    "longitude": "241132131",
+    "tipo": "CONDOMINIO"
+  }
+}

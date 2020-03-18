@@ -26,6 +26,9 @@ public class CondominioService {
 
 	@Autowired
 	EnderecoRepository endRepo;
+	
+	@Autowired
+	EnderecoService endService;
 
 	public Condominio find(Integer id) {
 		Optional<Condominio> obj = repo.findById(id);
@@ -40,13 +43,15 @@ public class CondominioService {
 		endRepo.save(obj.getEndereco());
 		return obj;
 	}
-
+	
+	@Transactional
 	public Condominio update(Condominio obj) {
 		Condominio newObj = find(obj.getId());
-		updateData(newObj, obj);
+		updateDataCondominio(newObj, obj);
 		return repo.save(newObj);
 	}
-
+	
+	
 	public void delete(Integer id) {
 		find(id);
 		try {
@@ -61,9 +66,11 @@ public class CondominioService {
 		return repo.findAll();
 	}
 
-	private void updateData(Condominio newObj, Condominio obj) {
+	private void updateDataCondominio(Condominio newObj, Condominio obj) {
 		newObj.setNome(obj.getNome());
+		newObj.setResponsavel(obj.getResponsavel());
 		newObj.setEmail(obj.getEmail());
+		newObj.setTelefone(obj.getTelefone());
 	}
 
 	public Condominio fromDTO(CondominioDTO objDto) {
